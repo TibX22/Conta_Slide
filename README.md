@@ -1,51 +1,93 @@
-📄 PDF Page Counter → Excel Report
+<div align="center">
 
-Questo script Python scansiona una cartella contenente file PDF e genera automaticamente un file Excel con:
+# 📄 PDF Page Counter
 
-📌 Nome del file PDF
+### 📊 Genera un Report Excel dai tuoi PDF in un click
 
-📌 Numero di pagine di ciascun PDF
+Uno strumento essenziale per archivisti e amministratori.  
+Analizza una directory, conta le pagine dei PDF e organizza tutto in un foglio Excel.
 
-È utile per creare rapidamente un report riepilogativo dei documenti presenti in una directory.
+<br />
 
-⚙️ Come funziona
+✨ Funzionalità • 📦 Requisiti • 🛠️ Installazione • ⚙️ Configurazione • 📊 Output
 
-Lo script legge tutti i file .pdf presenti nella cartella indicata.
+</div>
 
-Per ogni file:
+---
 
-Apre il PDF
+## 🚀 Funzionalità
 
-Conta il numero di pagine usando PyPDF2
+Dimentica il conteggio manuale. Questo script automatizza la catalogazione dei documenti.
 
-Scrive i risultati in un file Excel usando openpyxl
+- 🔍 **Scansione Directory**: Analizza tutti i file `.pdf` presenti in una cartella specificata.
+- 🔢 **Conteggio Pagine**: Apre ogni PDF ed estrae il numero esatto di pagine.
+- 📑 **Report Excel**: Genera un file `.xlsx` pulito e ordinato.
+- 🛡️ **Gestione Errori**: Ignora file corrotti o non leggibili senza interrompere l'esecuzione.
 
-Salva il file Excel nel percorso specificato.
+> ⚠️ Nota: Lo script analizza solo i PDF presenti nella cartella indicata (non nelle sottocartelle).
 
-📦 Requisiti
+---
 
-Python 3.x
+## 📦 Requisiti
 
-Librerie necessarie:
+Assicurati di avere:
 
+- Python 3.x
+- Librerie Python:
+  - `openpyxl` → gestione file Excel
+  - `PyPDF2` → lettura e parsing PDF
+
+---
+
+## 🛠️ Installazione
+
+### 1️⃣ Clona il repository
+
+```bash
+git clone https://github.com/tuo-username/pdf-page-counter.git
+cd pdf-page-counter
+```
+
+### 2️⃣ Installa le dipendenze
+
+```bash
 pip install openpyxl PyPDF2
+```
 
-🛠 Configurazione
+## ⚙️ Configurazione
+Prima di eseguire lo script, modifica le variabili nel file .py:
 
-Nel file Python modifica questa riga inserendo il percorso della cartella che contiene i PDF:
+```Python
+# 📂 CONFIGURAZIONE PERCORSI
 
-percorso_cartella = r"C:\percorso\della\tua\cartella"
+# Cartella contenente i PDF da analizzare
+percorso_cartella = r"C:\Utenti\TuoNome\Documenti\MieiPDF"
 
+# Percorso completo per il salvataggio del report Excel
+output_excel = r"C:\Utenti\TuoNome\Desktop\report_pagine.xlsx"
+```
+## ▶️ Utilizzo
 
-E, se necessario, modifica il nome o il percorso del file Excel di output:
-
-output_excel = r"C:\percorso\di\salvataggio\report_pagine.xlsx"
-
-▶️ Esecuzione
-
-Esegui lo script con:
-
+Esegui lo script dal terminale:
+```Python
 python nome_script.py
+```
+Al termine dell’elaborazione troverai il file Excel nel percorso specificato.
 
+## 📊 Esempio di Output
 
-Al termine verrà creato un file Excel con l’elenco dei PDF e il numero di pagine.
+Il file Excel generato avrà una struttura come questa:
+| 📄 Nome File           | 🔢 Pagine |
+| ---------------------- | --------- |
+| documento_progetto.pdf | 10        |
+| fattura_2023.pdf       | 3         |
+| manuale_utente.pdf     | 25        |
+| scansione_veloce.pdf   | 1         |
+
+<div align="center">
+
+<sub>Creato per semplificare la gestione documentale.</sub>
+<br />
+<sub>Se ti è stato utile, lascia una ⭐ al repository.</sub>
+
+</div> ```
